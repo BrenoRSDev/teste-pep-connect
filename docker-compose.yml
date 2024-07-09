@@ -32,6 +32,8 @@ services:
       DYNAMIC_CONFIG_ENABLED: 'true'
     volumes:
       - ./kafka-ui/dynamic_config.yaml:/etc/kafkaui/dynamic_config.yaml
+    networks:
+      - spring-cloud-network
   oracle-db:
     image: container-registry.oracle.com/database/express:latest
     ports:
