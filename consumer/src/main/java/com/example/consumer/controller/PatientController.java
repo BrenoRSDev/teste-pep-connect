@@ -2,8 +2,7 @@ package com.example.consumer.controller;
 
 import com.example.consumer.dto.response.PatientResponse;
 import com.example.consumer.filter.PatientFilter;
-import com.example.consumer.model.Patient;
-import com.example.consumer.service.impl.PatientServiceImpl;
+import com.example.consumer.service.PatientService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @AllArgsConstructor
 public class PatientController implements PatientControllerOpenApi {
 
-    PatientServiceImpl patientService;
+    PatientService patientService;
 
     @Override
     public ResponseEntity<Page<PatientResponse>> list(Pageable pageable, PatientFilter filter) {
